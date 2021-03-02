@@ -661,8 +661,8 @@ void Camera::update(LocalPlayer* player, f32 frametime, f32 busytime, f32 tool_r
 		left_wield_rotation *= core::RADTODEG;
 	} else {
 		f32 bobfrac = my_modf(m_view_bobbing_anim);
-		left_wield_position.X += sin(bobfrac*M_PI*2.0) * 3.0;
-		left_wield_position.Y += sin(my_modf(bobfrac*2.0)*M_PI) * 3.0;
+		left_wield_position.X += sin(bobfrac*M_PI*2.0+M_PI) * 3.0;
+		left_wield_position.Y += sin(my_modf(bobfrac*2.0)*M_PI+M_PI) * 3.0;
 	}
 	m_left_wieldnode->setPosition(left_wield_position);
 	m_left_wieldnode->setRotation(left_wield_rotation);
